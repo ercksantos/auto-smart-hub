@@ -92,7 +92,7 @@ const LGPD = () => {
                         <ul className="list-disc pl-6 text-muted-foreground space-y-2">
                             <li><strong>Art. 7º, I - Consentimento:</strong> quando solicitado pelo Controlador</li>
                             <li><strong>Art. 7º, V - Execução de contrato:</strong> processamento de pedidos e vendas</li>
-                            <li><strong>Art. 7º, IX - Legítimo interesse:</strong> análise de crédito, prevenção a fraudes</li>
+                            <li><strong>Art. 7º, IX - Legítimo interesse:</strong> análise de preferências, prevenção a fraudes</li>
                         </ul>
                     </section>
 

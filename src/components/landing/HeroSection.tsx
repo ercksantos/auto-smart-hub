@@ -14,52 +14,53 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 rounded-full glass-card mb-4 sm:mb-6 animate-fade-in">
               <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              <span className="text-sm text-muted-foreground">
+              <span className="text-xs sm:text-sm text-muted-foreground">
                 Já utilizado por concessionárias em todo o Brasil
               </span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-slide-up">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 animate-slide-up">
               Automatize o Atendimento e Gestão da Sua{" "}
               <span className="gradient-text">Concessionária</span> com{" "}
               <span className="gradient-text-accent">Inteligência Artificial</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 animate-slide-up animation-delay-100">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 animate-slide-up animation-delay-100">
               Sistema completo que atende seus clientes 24/7, gerencia seu estoque e aumenta suas vendas automaticamente
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10 animate-slide-up animation-delay-200">
-              <Button variant="heroAccent" size="xl" asChild>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10 animate-slide-up animation-delay-200">
+              <Button variant="heroAccent" size="xl" asChild className="text-sm sm:text-base">
                 <a href="#contato" className="group">
-                  Solicitar Demonstração Gratuita
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <span className="hidden sm:inline">Solicitar Demonstração Gratuita</span>
+                  <span className="sm:hidden">Agendar Demo Grátis</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button variant="heroOutline" size="xl" asChild>
+              <Button variant="heroOutline" size="xl" asChild className="text-sm sm:text-base">
                 <a href="#como-funciona">
-                  <Play className="w-5 h-5" />
+                  <Play className="w-4 h-4 sm:w-5 sm:h-5" />
                   Ver Como Funciona
                 </a>
               </Button>
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap gap-6 justify-center lg:justify-start animate-slide-up animation-delay-300">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="flex flex-wrap gap-4 sm:gap-6 justify-center lg:justify-start animate-slide-up animation-delay-300">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                 <Shield className="w-4 h-4 text-cyan-400" />
                 <span>Dados Seguros</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                 <Users className="w-4 h-4 text-cyan-400" />
                 <span>+500 Usuários</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                 <Zap className="w-4 h-4 text-cyan-400" />
                 <span>Suporte 24h</span>
               </div>

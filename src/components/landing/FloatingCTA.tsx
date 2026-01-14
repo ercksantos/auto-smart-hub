@@ -22,7 +22,7 @@ const FloatingCTA = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 animate-slide-up">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-2 sm:gap-3 animate-slide-up">
       <button
         onClick={() => setIsDismissed(true)}
         className="p-1.5 rounded-full bg-secondary/80 text-muted-foreground hover:text-foreground transition-colors"
@@ -33,7 +33,7 @@ const FloatingCTA = () => {
       <Button
         variant="heroAccent"
         size="lg"
-        className="shadow-glow-accent"
+        className="shadow-glow-accent sm:text-base text-sm"
         asChild
       >
         <a href="#contato" className="flex items-center gap-2">

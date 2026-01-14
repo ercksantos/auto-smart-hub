@@ -52,7 +52,7 @@ const TermsOfService = () => {
                             <li>Sistema de gestão de veículos e estoque</li>
                             <li>Atendimento automatizado via WhatsApp com inteligência artificial</li>
                             <li>Gestão de leads e oportunidades de venda</li>
-                            <li>Integração com sistemas de simulação de financiamento</li>
+                            <li>Controle de propostas e negociações</li>
                             <li>Dashboard analítico com métricas de desempenho</li>
                             <li>Armazenamento de dados e imagens de veículos</li>
                         </ul>

@@ -96,12 +96,12 @@ const PrivacyPolicy = () => {
                         <h3 className="text-xl font-semibold mb-3">4.2. Dados de Usuários Finais (Clientes das Concessionárias)</h3>
                         <p className="text-muted-foreground mb-2">O sistema processa, em nome do Controlador:</p>
                         <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                            <li><strong>Dados de identificação:</strong> nome, CPF, RG, CNH</li>
+                            <li><strong>Dados de identificação:</strong> nome, CPF, RG, CNH (quando fornecidos)</li>
                             <li><strong>Dados de contato:</strong> telefone, WhatsApp, e-mail, endereço</li>
-                            <li><strong>Dados financeiros:</strong> renda, informações para simulação de financiamento</li>
-                            <li><strong>Dados de interação:</strong> histórico de conversas, preferências de veículos</li>
-                            <li><strong>Dados profissionais:</strong> ocupação, empregador (quando fornecidos)</li>
-                            <li><strong>Documentos:</strong> imagens de documentos enviados para análise de crédito</li>
+                            <li><strong>Dados de interesse:</strong> preferências de veículos, faixa de preço</li>
+                            <li><strong>Dados de interação:</strong> histórico de conversas, veículos visualizados</li>
+                            <li><strong>Dados profissionais:</strong> ocupação, empregador (quando fornecidos opcionalmente)</li>
+                            <li><strong>Documentos:</strong> imagens enviadas pelo cliente (quando necessário)</li>
                         </ul>
                     </section>
 
@@ -125,8 +125,8 @@ const PrivacyPolicy = () => {
 
                         <h3 className="text-xl font-semibold mb-3">5.3. Coleta de Terceiros:</h3>
                         <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                            <li>APIs de financiamento (mediante consentimento)</li>
-                            <li>Integração com WhatsApp Business</li>
+                            <li>Integração com WhatsApp Business (Meta)</li>
+                            <li>Serviços de infraestrutura em nuvem</li>
                         </ul>
                     </section>
 
@@ -148,7 +148,7 @@ const PrivacyPolicy = () => {
                         <ul className="list-disc pl-6 text-muted-foreground space-y-2">
                             <li>Atendimento automatizado via chatbot</li>
                             <li>Gestão de leads e oportunidades</li>
-                            <li>Simulação de financiamento</li>
+                            <li>Controle de propostas e negociações</li>
                             <li>Envio de informações sobre veículos</li>
                             <li>Análise de interesse e preferências</li>
                             <li>Histórico de atendimento</li>
@@ -177,7 +177,6 @@ const PrivacyPolicy = () => {
                         <h3 className="text-xl font-semibold mb-3">8.2. Podemos compartilhar dados com:</h3>
                         <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
                             <li><strong>Fornecedores de Infraestrutura:</strong> provedores de hospedagem e nuvem</li>
-                            <li><strong>APIs de Terceiros:</strong> serviços de financiamento (mediante consentimento)</li>
                             <li><strong>WhatsApp/Meta:</strong> para funcionamento do chatbot</li>
                             <li><strong>Processadores de Pagamento:</strong> para cobrança das mensalidades</li>
                             <li><strong>Autoridades:</strong> quando exigido por lei ou ordem judicial</li>

@@ -50,33 +50,33 @@ const BenefitsSection = () => {
     <section id="beneficios" className="section-padding relative">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-500/5 to-background" />
-      
+
       <div className="container-custom relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 rounded-full glass-card text-sm text-emerald-400 font-medium mb-6 animate-fade-in">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full glass-card text-xs sm:text-sm text-emerald-400 font-medium mb-4 sm:mb-6 animate-fade-in">
             Benefícios
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 animate-slide-up">
             Resultados Reais para{" "}
             <span className="gradient-text-accent">Seu Negócio</span>
           </h2>
-          <p className="text-lg text-muted-foreground animate-slide-up animation-delay-100">
+          <p className="text-base sm:text-lg text-muted-foreground animate-slide-up animation-delay-100">
             Não são apenas promessas. São resultados comprovados por concessionárias que já usam nossa plataforma.
           </p>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`glass-card rounded-2xl p-6 group hover:scale-[1.02] transition-all duration-300 animate-slide-up`}
+              className={`glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 group hover:scale-[1.02] transition-all duration-300 animate-slide-up`}
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <benefit.icon className="w-6 h-6 text-background" />
+              <div className="flex items-start justify-between mb-3 sm:mb-4">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-background" />
                 </div>
                 <span className={`text-2xl font-bold bg-gradient-to-r ${benefit.color} bg-clip-text text-transparent`}>
                   {benefit.metric}

@@ -31,8 +31,8 @@ const faqs = [
     answer: "Oferecemos uma demonstração gratuita completa onde você pode ver o sistema funcionando com seus próprios veículos. Após a demonstração, você decide se deseja contratar."
   },
   {
-    question: "Como funciona a simulação de financiamento?",
-    answer: "Integramos com as principais financeiras do mercado. Quando o cliente demonstra interesse em financiamento, a IA coleta os dados necessários e realiza a consulta de crédito, retornando se o cliente está aprovado ou não."
+    question: "Posso integrar com outros sistemas?",
+    answer: "Sim! O sistema foi desenvolvido para permitir integrações futuras com diversos serviços de terceiros, incluindo sistemas de gestão, CRMs e outras ferramentas que sua concessionária já utiliza."
   },
   {
     question: "Os dados dos clientes ficam seguros?",

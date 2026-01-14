@@ -179,18 +179,20 @@ const ContactSection = () => {
                 type="submit"
                 variant="heroAccent"
                 size="xl"
-                className="w-full"
+                className="w-full text-sm sm:text-base"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    Enviando...
+                    <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
+                    <span className="hidden sm:inline">Enviando...</span>
+                    <span className="sm:hidden">Enviando...</span>
                   </>
                 ) : (
                   <>
-                    Quero agendar minha demo
-                    <ArrowRight className="w-5 h-5" />
+                    <span className="hidden sm:inline">Quero agendar minha demo</span>
+                    <span className="sm:hidden">Agendar demo</span>
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </>
                 )}
               </Button>

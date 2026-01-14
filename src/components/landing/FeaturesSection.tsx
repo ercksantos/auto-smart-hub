@@ -29,19 +29,19 @@ const features = [
     description: "Captura automática de dados dos interessados",
     highlights: [
       "Resumo detalhado de cada atendimento",
-      "Filtragem por status de financiamento",
+      "Filtragem por status de negociação",
       "Histórico completo de interações"
     ],
     color: "from-violet-500 to-violet-400"
   },
   {
     icon: CreditCard,
-    title: "Simulação de Financiamento",
-    description: "Integração com análise de crédito",
+    title: "Controle de Propostas",
+    description: "Gerencie propostas e fechamento de vendas",
     highlights: [
-      "Resposta automática ao cliente",
-      "Aprovado ou reprovado em tempo real",
-      "Acompanhamento do status"
+      "Acompanhamento de propostas",
+      "Status de negociação em tempo real",
+      "Histórico de ofertas e contraproposta"
     ],
     color: "from-orange-500 to-orange-400"
   },
@@ -74,7 +74,7 @@ const FeaturesSection = () => {
     <section id="funcionalidades" className="section-padding relative">
       {/* Background Accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-cyan-500/5 rounded-full blur-3xl" />
-      
+
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
