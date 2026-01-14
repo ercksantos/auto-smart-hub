@@ -17,9 +17,9 @@ const Footer = () => {
       { label: "Documentação", href: "#" }
     ],
     legal: [
-      { label: "Termos de Uso", href: "#" },
-      { label: "Política de Privacidade", href: "#" },
-      { label: "LGPD", href: "#" }
+      { label: "Termos de Uso", href: "/termos-de-uso" },
+      { label: "Política de Privacidade", href: "/politica-de-privacidade" },
+      { label: "LGPD", href: "/lgpd" }
     ]
   };
 
@@ -49,15 +49,15 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-cyan-400" />
-                <span>contato@concessionaria-inteligente.com</span>
+                <span>erickai.contato@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-cyan-400" />
-                <span>(11) 99999-9999</span>
+                <span>(53) 99163-1843</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-cyan-400" />
-                <span>São Paulo, SP - Brasil</span>
+                <span>Pelotas, RS - Brasil</span>
               </div>
             </div>
           </div>

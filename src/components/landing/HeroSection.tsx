@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-hero-pattern" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-400/10 rounded-full blur-3xl animate-float animation-delay-300" />
-      
+
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
@@ -81,49 +81,13 @@ const HeroSection = () => {
                     </div>
                     <span className="text-xs text-muted-foreground ml-2">dashboard.concessionaria-inteligente.com</span>
                   </div>
-                  
-                  {/* Dashboard Content */}
-                  <div className="p-6 space-y-4">
-                    {/* Stats Row */}
-                    <div className="grid grid-cols-3 gap-3">
-                      <div className="bg-secondary/30 rounded-lg p-3 text-center">
-                        <p className="text-2xl font-bold gradient-text">127</p>
-                        <p className="text-xs text-muted-foreground">Veículos</p>
-                      </div>
-                      <div className="bg-secondary/30 rounded-lg p-3 text-center">
-                        <p className="text-2xl font-bold gradient-text-accent">89</p>
-                        <p className="text-xs text-muted-foreground">Leads Hoje</p>
-                      </div>
-                      <div className="bg-secondary/30 rounded-lg p-3 text-center">
-                        <p className="text-2xl font-bold text-emerald-400">94%</p>
-                        <p className="text-xs text-muted-foreground">Satisfação</p>
-                      </div>
-                    </div>
-                    
-                    {/* Chart Placeholder */}
-                    <div className="bg-secondary/20 rounded-lg p-4 h-32 flex items-end gap-1">
-                      {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((height, i) => (
-                        <div
-                          key={i}
-                          className="flex-1 bg-gradient-to-t from-cyan-500/50 to-cyan-400/80 rounded-t"
-                          style={{ height: `${height}%` }}
-                        />
-                      ))}
-                    </div>
-                    
-                    {/* Recent Activity */}
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3 bg-secondary/20 rounded-lg p-2">
-                        <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                          <span className="text-xs">🚗</span>
-                        </div>
-                        <div className="flex-1">
-                          <p className="text-xs font-medium">Novo lead: Honda Civic 2024</p>
-                          <p className="text-xs text-muted-foreground">há 2 minutos</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+                  {/* Dashboard Image */}
+                  <img
+                    src="/dashboard-inicio.png"
+                    alt="Dashboard da Concessionária Inteligente"
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
 

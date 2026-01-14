@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Car } from "lucide-react";
+import { Menu, X, Car, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,11 +29,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "glass-card py-3"
           : "bg-transparent py-4"
-      }`}
+        }`}
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between">
@@ -52,6 +57,29 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium outline-none">
+                Legal
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuItem asChild>
+                  <a href="/termos-de-uso" className="cursor-pointer">
+                    Termos de Uso
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/politica-de-privacidade" className="cursor-pointer">
+                    Política de Privacidade
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/lgpd" className="cursor-pointer">
+                    LGPD
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* CTA Button */}
@@ -85,6 +113,32 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
+              <div className="border-t border-border pt-4 mt-2">
+                <p className="text-xs font-semibold text-muted-foreground mb-3">LEGAL</p>
+                <div className="flex flex-col gap-3">
+                  <a
+                    href="/termos-de-uso"
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Termos de Uso
+                  </a>
+                  <a
+                    href="/politica-de-privacidade"
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Política de Privacidade
+                  </a>
+                  <a
+                    href="/lgpd"
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    LGPD
+                  </a>
+                </div>
+              </div>
               <Button variant="hero" size="default" className="mt-2" asChild>
                 <a href="#contato">Solicitar Demo</a>
               </Button>
