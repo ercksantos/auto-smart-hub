@@ -5,7 +5,7 @@ const testimonials = [
     name: "Roberto Ferreira",
     role: "Proprietário",
     company: "Auto Premium SP",
-    image: null,
+    image: "/avatars/roberto.jpg",
     rating: 5,
     text: "Depois que implementamos o sistema, nossas vendas aumentaram 35% no primeiro mês. O chatbot atende tão bem que alguns clientes nem percebem que é IA."
   },
@@ -13,7 +13,7 @@ const testimonials = [
     name: "Carla Mendes",
     role: "Gerente Comercial",
     company: "Veículos Estrela",
-    image: null,
+    image: "/avatars/carla.jpg",
     rating: 5,
     text: "A gestão de leads ficou muito mais organizada. Antes perdíamos muitos contatos, agora temos controle total e não deixamos nenhuma oportunidade escapar."
   },
@@ -21,7 +21,7 @@ const testimonials = [
     name: "Marcos Oliveira",
     role: "Diretor",
     company: "MO Automóveis",
-    image: null,
+    image: "/avatars/marcos.jpg",
     rating: 5,
     text: "O suporte é excelente e a plataforma é muito intuitiva. Minha equipe se adaptou em menos de uma semana. Recomendo para qualquer concessionária."
   }
@@ -72,11 +72,11 @@ const TestimonialsSection = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500/30 to-emerald-400/30 flex items-center justify-center">
-                  <span className="text-lg font-bold gradient-text">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover ring-2 ring-cyan-500/30"
+                />
                 <div>
                   <p className="font-semibold text-foreground">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">
