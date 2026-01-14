@@ -3,7 +3,7 @@ import { ArrowRight, Play, Shield, Users, Zap } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-x-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-hero-pattern" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-float" />
@@ -68,8 +68,8 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Dashboard Preview */}
-          <div className="relative animate-scale-in animation-delay-200">
-            <div className="relative">
+          <div className="relative animate-scale-in animation-delay-200 px-4 sm:px-0">
+            <div className="relative pb-16 sm:pb-0">
               {/* Main Dashboard Image */}
               <div className="glass-card rounded-2xl p-2 shadow-glow-lg animate-glow-pulse">
                 <div className="bg-card rounded-xl overflow-hidden">
@@ -93,7 +93,7 @@ const HeroSection = () => {
               </div>
 
               {/* Floating WhatsApp Card */}
-              <div className="absolute -bottom-6 -left-6 glass-card rounded-xl p-4 shadow-lg animate-float animation-delay-500 max-w-[200px]">
+              <div className="absolute -bottom-12 left-0 sm:-left-6 sm:-bottom-6 glass-card rounded-xl p-4 shadow-lg animate-float animation-delay-500 max-w-[200px]">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
                     <span className="text-lg">💬</span>

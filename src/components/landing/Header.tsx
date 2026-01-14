@@ -30,8 +30,8 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "glass-card py-3"
-          : "bg-transparent py-4"
+        ? "glass-card py-3"
+        : "bg-transparent py-4"
         }`}
     >
       <div className="container-custom">
@@ -41,7 +41,7 @@ const Header = () => {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-400 flex items-center justify-center shadow-glow-sm group-hover:shadow-glow-md transition-all duration-300">
               <Car className="w-5 h-5 text-background" />
             </div>
-            <span className="text-lg font-bold text-foreground hidden sm:block">
+            <span className="text-base sm:text-lg font-bold text-foreground">
               Concessionária <span className="gradient-text">Inteligente</span>
             </span>
           </a>
@@ -101,7 +101,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in">
+          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in bg-background/95 backdrop-blur-lg rounded-lg px-4">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
