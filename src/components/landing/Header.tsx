@@ -38,11 +38,12 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-400 flex items-center justify-center shadow-glow-sm group-hover:shadow-glow-md transition-all duration-300">
-              <Car className="w-5 h-5 text-background" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-400 flex items-center justify-center shadow-glow-sm group-hover:shadow-glow-md transition-all duration-300">
+              <Car className="w-4 h-4 sm:w-5 sm:h-5 text-background" />
             </div>
-            <span className="text-base sm:text-lg font-bold text-foreground">
-              Concessionária <span className="gradient-text">Inteligente</span>
+            <span className="text-sm sm:text-base lg:text-lg font-bold text-foreground">
+              Concessionária <span className="gradient-text hidden sm:inline">Inteligente</span>
+              <span className="gradient-text sm:hidden">Int.</span>
             </span>
           </a>
 

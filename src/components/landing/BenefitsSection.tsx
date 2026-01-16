@@ -1,53 +1,56 @@
 import { Clock, TrendingUp, DollarSign, Target, BarChart2, CheckCircle } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const benefits = [
   {
     icon: Clock,
-    title: "Economize até 15 horas semanais",
-    description: "Automatize tarefas repetitivas e libere sua equipe para focar em vendas.",
-    metric: "15h/semana",
+    title: "Resposta em menos de 1 minuto, 24 horas por dia",
+    description: "Acabou a desculpa de \"estava fechado\". Cada lead é respondido na hora, mesmo às 3h da manhã.",
+    metric: "<1min",
     color: "from-cyan-500 to-cyan-400"
   },
   {
     icon: TrendingUp,
-    title: "Aumente em até 40% a conversão",
-    description: "Atendimento instantâneo significa mais clientes fechando negócio.",
-    metric: "+40%",
+    title: "Converta mais sem aumentar a equipe",
+    description: "Mais vendas com o mesmo time. Seus vendedores focam em fechar, não em responder \"qual o preço?\".",
+    metric: "+vendas",
     color: "from-emerald-400 to-emerald-500"
   },
   {
     icon: DollarSign,
-    title: "Atenda mais sem contratar",
-    description: "Escale seu atendimento sem aumentar custos com pessoal.",
-    metric: "∞ clientes",
+    title: "Pare de pagar vendedor para ficar no WhatsApp",
+    description: "Salário de R$ 3.500/mês sendo desperdiçado. Use seu time onde ele gera dinheiro de verdade.",
+    metric: "R$ 3.5k",
     color: "from-violet-500 to-violet-400"
   },
   {
     icon: Target,
-    title: "Nunca perca uma oportunidade",
-    description: "Atendimento 24/7 captura leads a qualquer hora do dia ou noite.",
-    metric: "24/7",
+    title: "Nenhum lead fica sem resposta",
+    description: "Zero clientes perdidos por falta de atendimento. Cada um que entrou em contato foi atendido.",
+    metric: "0 perdas",
     color: "from-orange-500 to-orange-400"
   },
   {
     icon: BarChart2,
-    title: "Controle total do estoque",
-    description: "Visualize, organize e atualize seu inventário em tempo real.",
-    metric: "100%",
+    title: "Saiba exatamente o que está acontecendo",
+    description: "Quantos leads entraram hoje? Quais carros mais procurados? Quem está pronto pra comprar? Você sabe.",
+    metric: "Dados",
     color: "from-pink-500 to-pink-400"
   },
   {
     icon: CheckCircle,
-    title: "Melhore a experiência",
-    description: "Clientes satisfeitos indicam mais e voltam a comprar.",
+    title: "Cliente bem atendido volta e indica",
+    description: "Atendimento rápido e profissional gera indicação. Indicação gera mais vendas. Simples assim.",
     metric: "5★",
     color: "from-cyan-400 to-emerald-400"
   }
 ];
 
 const BenefitsSection = () => {
+  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
   return (
-    <section id="beneficios" className="section-padding relative">
+    <section id="beneficios" className="section-padding relative" ref={elementRef}>
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-cyan-500/5 to-background" />
 
@@ -55,14 +58,13 @@ const BenefitsSection = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full glass-card text-xs sm:text-sm text-emerald-400 font-medium mb-4 sm:mb-6 animate-fade-in">
-            Benefícios
+            O que você ganha
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 animate-slide-up">
-            Resultados Reais para{" "}
-            <span className="gradient-text-accent">Seu Negócio</span>
+            Como Funciona <span className="gradient-text-accent">Na Prática</span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground animate-slide-up animation-delay-100">
-            Não são apenas promessas. São resultados comprovados por concessionárias que já usam nossa plataforma.
+            Sem enrolação, sem promessa milagrosa. São esses os resultados que você vai ter:
           </p>
         </div>
 
@@ -75,7 +77,9 @@ const BenefitsSection = () => {
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
               <div className="flex items-start justify-between mb-3 sm:mb-4">
-                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg transition-all duration-300 ${isVisible ? 'animate-icon-pop' : 'icon-hidden'
+                  }`}
+                  style={{ animationDelay: `${(index + 1) * 150}ms` }}>
                   <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-background" />
                 </div>
                 <span className={`text-2xl font-bold bg-gradient-to-r ${benefit.color} bg-clip-text text-transparent`}>

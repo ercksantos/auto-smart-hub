@@ -41,10 +41,10 @@
     --gradient-accent: linear-gradient(135deg, hsl(156, 100%, 50%) 0%, hsl(170, 100%, 45%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(230, 60%, 12%) 0%, hsl(230, 60%, 6%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(230, 50%, 14%) 0%, hsl(230, 50%, 10%) 100%);
-    
+
     --glow-primary: 0 0 60px hsla(186, 100%, 50%, 0.3);
     --glow-accent: 0 0 60px hsla(156, 100%, 50%, 0.2);
-    
+
     --glass-bg: hsla(230, 50%, 15%, 0.6);
     --glass-border: hsla(0, 0%, 100%, 0.08);
   }
@@ -62,11 +62,14 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
   }
 }
 
@@ -96,11 +99,45 @@
   }
 
   .section-padding {
-    @apply py-20 md:py-28 lg:py-32;
+    @apply py-12 sm:py-16 md:py-20 lg:py-28 xl:py-32;
   }
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .glass-card {
+      backdrop-filter: blur(16px);
+    }
+
+    h1,
+    h2,
+    h3 {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* Prevent horizontal scroll */
+    * {
+      max-width: 100%;
+    }
+  }
+
+  /* Improve touch targets on mobile */
+  @media (max-width: 768px) {
+
+    button:not(.p-1):not(.p-1\.5),
+    a[role="button"] {
+      min-height: 44px;
+    }
+
+    /* Ensure proper spacing for mobile cards */
+    .glass-card {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
 
@@ -156,12 +193,65 @@
   .animation-delay-600 {
     animation-delay: 600ms;
   }
+
+  .animate-icon-bounce {
+    animation: iconBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .animate-icon-pop {
+    animation: iconPop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .animate-icon-rotate {
+    animation: iconRotate 0.6s ease-out forwards;
+  }
+
+  .animate-icon-scale-bounce {
+    animation: iconScaleBounce 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .icon-visible {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  .icon-hidden {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-reveal {
+    animation: cardReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .card-hidden {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+
+  /* Utility classes */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -172,6 +262,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -183,6 +274,7 @@
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -194,6 +286,7 @@
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -205,6 +298,7 @@
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -212,20 +306,106 @@
 }
 
 @keyframes glowPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 40px hsla(186, 100%, 50%, 0.2);
   }
+
   50% {
     box-shadow: 0 0 80px hsla(186, 100%, 50%, 0.4);
   }
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
+  }
+}
+
+@keyframes iconBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(20px);
+  }
+
+  50% {
+    transform: scale(1.1) translateY(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes iconPop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes iconRotate {
+  0% {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes iconScaleBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  60% {
+    transform: scale(1.15);
+  }
+
+  80% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+
+  60% {
+    transform: translateY(-5px) scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 

@@ -40,21 +40,21 @@ const ScreenshotsSection = () => {
     <section className="section-padding relative overflow-hidden">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16">
           <span className="inline-block px-4 py-2 rounded-full glass-card text-sm text-cyan-400 font-medium mb-6 animate-fade-in">
             Demonstração
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 animate-slide-up">
             Veja o Sistema em{" "}
             <span className="gradient-text">Ação</span>
           </h2>
-          <p className="text-lg text-muted-foreground animate-slide-up animation-delay-100">
+          <p className="text-base sm:text-lg text-muted-foreground animate-slide-up animation-delay-100 px-4">
             Interface moderna e intuitiva, desenvolvida para facilitar o dia a dia da sua equipe.
           </p>
         </div>
 
         {/* Screenshot Viewer */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
           {/* Main Display */}
           <div className="glass-card rounded-2xl overflow-hidden shadow-glow-md animate-scale-in">
             {/* Browser Chrome */}
@@ -75,7 +75,8 @@ const ScreenshotsSection = () => {
                 key={activeIndex}
                 src={screenshots[activeIndex].image}
                 alt={screenshots[activeIndex].title}
-                className="w-full h-auto object-contain animate-in fade-in zoom-in-95 duration-500"
+                className="w-full h-auto"
+                loading="lazy"
               />
             </div>
           </div>

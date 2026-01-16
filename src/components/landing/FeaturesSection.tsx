@@ -1,77 +1,80 @@
 import { Bot, Car, BarChart3, CreditCard, PieChart, MessageSquare } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const features = [
   {
     icon: Bot,
-    title: "Atendimento Inteligente via WhatsApp",
-    description: "Chatbot humanizado que conversa com clientes",
+    title: "Atendimento que nunca dorme",
+    description: "Um funcionário digital que responde todos os clientes",
     highlights: [
-      "Disponível 24 horas por dia, 7 dias por semana",
-      "Qualifica leads automaticamente",
-      "Entende perguntas em linguagem natural"
+      "Funciona 24h por dia, inclusive domingo e feriado",
+      "Responde na hora, sem fazer o cliente esperar",
+      "Envia fotos, valores e informações dos carros automaticamente"
     ],
     color: "from-cyan-500 to-cyan-400"
   },
   {
     icon: Car,
-    title: "Catálogo Digital Completo",
-    description: "Gestão centralizada de todo o estoque",
+    title: "Todos os seus carros organizados",
+    description: "Acabou planilha bagunçada e foto perdida no celular",
     highlights: [
-      "Fotos externas e internas dos veículos",
-      "Informações detalhadas (marca, modelo, ano, preço)",
-      "Envio automático de fotos via WhatsApp"
+      "Cada carro com fotos, dados e preço no lugar certo",
+      "Cliente pede informação, sistema envia na hora",
+      "Atualiza estoque e todo mundo vê em tempo real"
     ],
     color: "from-emerald-400 to-emerald-500"
   },
   {
     icon: BarChart3,
-    title: "Gestão de Leads Inteligente",
-    description: "Captura automática de dados dos interessados",
+    title: "Sabe quem está pronto pra comprar",
+    description: "Leads organizados por interesse real",
     highlights: [
-      "Resumo detalhado de cada atendimento",
-      "Filtragem por status de negociação",
-      "Histórico completo de interações"
+      "Cliente só perguntou preço? Interesse baixo",
+      "Pediu fotos, financiamento e agendou visita? Esse tá quente",
+      "Vendedor vai direto nos leads que vão fechar"
     ],
     color: "from-violet-500 to-violet-400"
   },
   {
     icon: CreditCard,
-    title: "Controle de Propostas",
-    description: "Gerencie propostas e fechamento de vendas",
+    title: "Acompanha cada negociação",
+    description: "Nenhuma proposta esquecida ou perdida",
     highlights: [
-      "Acompanhamento de propostas",
-      "Status de negociação em tempo real",
-      "Histórico de ofertas e contraproposta"
+      "Registro de todas as ofertas feitas",
+      "Status atualizado: proposta enviada, aguardando, fechado",
+      "Vendedor sabe exatamente o que fazer com cada cliente"
     ],
     color: "from-orange-500 to-orange-400"
   },
   {
     icon: PieChart,
-    title: "Dashboard Analítico",
-    description: "Visão geral do seu negócio",
+    title: "Entenda seu negócio de verdade",
+    description: "Dados que mostram onde está o dinheiro",
     highlights: [
-      "Métricas de atendimentos realizados",
-      "Veículos mais procurados",
-      "Indicadores de performance"
+      "Quantos leads entraram hoje, essa semana, esse mês",
+      "Quais carros o pessoal mais procura",
+      "Taxa de conversão: quantos viraram venda de verdade"
     ],
     color: "from-pink-500 to-pink-400"
   },
   {
     icon: MessageSquare,
-    title: "Multi-Atendimento",
-    description: "Atenda centenas de clientes simultaneamente",
+    title: "Atende 50 clientes ao mesmo tempo",
+    description: "Seu vendedor só atende 1. O sistema atende todos",
     highlights: [
-      "Sem fila de espera",
-      "Respostas instantâneas",
-      "Escale sem contratar"
+      "Sem fila, sem espera, sem cliente desistindo",
+      "Cada um recebe atenção exclusiva",
+      "Escala infinita sem contratar ninguém"
     ],
     color: "from-cyan-400 to-emerald-400"
   }
 ];
 
 const FeaturesSection = () => {
+  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
   return (
-    <section id="funcionalidades" className="section-padding relative">
+    <section id="funcionalidades" className="section-padding relative" ref={elementRef}>
       {/* Background Accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-cyan-500/5 rounded-full blur-3xl" />
 
@@ -79,14 +82,14 @@ const FeaturesSection = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-2 rounded-full glass-card text-sm text-cyan-400 font-medium mb-6 animate-fade-in">
-            Funcionalidades
+            O que tem dentro
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
-            Tudo o Que Você Precisa em{" "}
-            <span className="gradient-text">Uma Única Plataforma</span>
+            Tudo Que Você Precisa{" "}
+            <span className="gradient-text">Em Um Só Lugar</span>
           </h2>
           <p className="text-lg text-muted-foreground animate-slide-up animation-delay-100">
-            Desenvolvemos cada funcionalidade pensando nas necessidades reais das concessionárias brasileiras.
+            Não é só um chatbot. É um sistema completo pra você parar de perder vendas.
           </p>
         </div>
 
@@ -99,7 +102,9 @@ const FeaturesSection = () => {
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
               {/* Icon */}
-              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-5 shadow-lg transition-all duration-300 ${isVisible ? 'animate-icon-rotate' : 'icon-hidden'
+                }`}
+                style={{ animationDelay: `${(index + 1) * 150}ms` }}>
                 <feature.icon className="w-7 h-7 text-background" />
               </div>
 

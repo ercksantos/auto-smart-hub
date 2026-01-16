@@ -88,9 +88,9 @@ const ContactSection = () => {
   };
 
   const guarantees = [
-    "Sem compromisso",
-    "Suporte completo",
-    "Treinamento incluído"
+    "Teste por 14 dias grátis",
+    "Cancela quando quiser",
+    "Pronto em menos de 24h"
   ];
 
   return (
@@ -102,23 +102,23 @@ const ContactSection = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
             <span className="inline-block px-4 py-2 rounded-full glass-card text-sm text-emerald-400 font-medium mb-6 animate-fade-in">
-              Comece Agora
+              Sem enrolação
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
-              Comece a Vender Mais{" "}
-              <span className="gradient-text-accent">Hoje Mesmo</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 animate-slide-up">
+              Teste Sem{" "}
+              <span className="gradient-text-accent">Pagar Nada</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up animation-delay-100">
-              Agende uma demonstração gratuita e veja o sistema funcionando na prática. Sem compromisso.
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up animation-delay-100 px-4">
+              Zero burocracia, zero pagamento inicial, zero compromisso. Coloca pra funcionar e decide depois se quer continuar.
             </p>
           </div>
 
           {/* Form Card */}
-          <div className="glass-card rounded-2xl p-8 md:p-10 shadow-glow-md animate-scale-in animation-delay-200">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
+          <div className="glass-card rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 shadow-glow-md animate-scale-in animation-delay-200">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-foreground">Nome completo</Label>
                   <Input
@@ -145,7 +145,7 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="whatsapp" className="text-foreground">WhatsApp</Label>
                   <Input
@@ -190,8 +190,8 @@ const ContactSection = () => {
                   </>
                 ) : (
                   <>
-                    <span className="hidden sm:inline">Quero agendar minha demo</span>
-                    <span className="sm:hidden">Agendar demo</span>
+                    <span className="hidden sm:inline">Quero testar 7 dias grátis</span>
+                    <span className="sm:hidden">Testar Grátis</span>
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </>
                 )}
@@ -211,10 +211,10 @@ const ContactSection = () => {
             {/* WhatsApp Alternative */}
             <div className="mt-6 pt-6 border-t border-border/50 text-center">
               <p className="text-sm text-muted-foreground mb-3">
-                Ou, chame no WhatsApp...
+                Prefere conversar direto?
               </p>
               <a
-                href="https://wa.me/5553991631843?text=Olá! Gostaria de agendar uma demonstração do Auto Smart Hub."
+                href="https://wa.me/5553991631843?text=Olá! Quero testar o sistema por 14 dias."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors font-medium"

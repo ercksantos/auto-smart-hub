@@ -38,8 +38,8 @@ const FloatingCTA = () => {
       >
         <a href="#contato" className="flex items-center gap-2">
           <MessageCircle className="w-5 h-5" />
-          <span className="hidden sm:inline">Agendar Demo</span>
-          <span className="sm:hidden">Demo</span>
+          <span className="hidden sm:inline">Testar Grátis</span>
+          <span className="sm:hidden">Testar</span>
         </a>
       </Button>
     </div>
