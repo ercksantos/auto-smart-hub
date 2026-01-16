@@ -8,7 +8,7 @@ import {
 const faqs = [
   {
     question: "Quanto custa?",
-    answer: "Você testa 14 dias grátis. Depois disso, o investimento é bem menor que o salário de um vendedor junior. E ao contrário do vendedor, funciona 24h por dia sem férias, sem descanso e sem reclamar."
+    answer: "Você testa 7 dias grátis. Depois disso, o investimento é bem menor que o salário de um vendedor junior. E ao contrário do vendedor, funciona 24h por dia sem férias, sem descanso e sem reclamar."
   },
   {
     question: "Vou precisar contratar alguém pra mexer nisso?",
@@ -27,7 +27,7 @@ const faqs = [
     answer: "Pelo contrário. Eles vão parar de perder tempo respondendo \"qual o preço?\" e vão focar em fechar vendas com clientes já qualificados. Produtividade sobe, estresse desce."
   },
   {
-    question: "E se eu não gostar depois dos 14 dias?",
+    question: "E se eu não gostar depois dos 7 dias?",
     answer: "Cancela. Simples assim. Sem burocracia, sem multa, sem pergunta inconveniente. O risco é todo meu, não seu."
   },
   {
